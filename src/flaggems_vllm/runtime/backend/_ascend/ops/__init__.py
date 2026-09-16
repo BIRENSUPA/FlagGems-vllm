@@ -21,6 +21,12 @@ from flaggems_vllm.runtime.backend._ascend.ops.causal_conv1d_update import (
 from flaggems_vllm.runtime.backend._ascend.ops.compress_norm_mrope import (
     qwen4_compress_norm_mrope_store_groups,
 )
+from flaggems_vllm.runtime.backend._ascend.ops.compressor import (
+    build_compressor_metadata,
+    compressor,
+    compressor_prepared,
+    prepare_compressor_workspace,
+)
 from flaggems_vllm.runtime.backend._ascend.ops.fused_moe import (
     fused_experts_impl,
     inplace_fused_experts,
@@ -65,4 +71,8 @@ __all__ = [
     "sparse_attn_sharedkv",
     "swiglu",
     "persistent_topk",
+    "compressor",
+    "compressor_prepared",
+    "prepare_compressor_workspace",
+    "build_compressor_metadata",
 ]
