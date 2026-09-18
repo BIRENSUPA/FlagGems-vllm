@@ -15,9 +15,13 @@
 from flaggems_vllm.runtime.backend._hygon.fused.fused_deepseek_v4_qnorm_rope_kv_rope_quant_insert import (
     fused_deepseek_v4_qnorm_rope_kv_rope_quant_insert,
 )
+from flaggems_vllm.runtime.backend._hygon.fused.fused_marlin_moe import (  # noqa: F401
+    fused_marlin_moe,
+)
 from flaggems_vllm.runtime.backend._hygon.fused.moe_sum import moe_sum  # noqa: F401
 
 __all__ = [
     "fused_deepseek_v4_qnorm_rope_kv_rope_quant_insert",
+    "fused_marlin_moe",
     "moe_sum",
 ]
