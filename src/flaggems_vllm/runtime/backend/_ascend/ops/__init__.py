@@ -38,6 +38,7 @@ from flaggems_vllm.runtime.backend._ascend.ops.fused_moe import (
     inplace_fused_experts,
     outplace_fused_experts,
 )
+from flaggems_vllm.runtime.backend._ascend.ops.gemma_rms_norm import gemma_rms_norm
 from flaggems_vllm.runtime.backend._ascend.ops.group_list_cumsum import (
     group_list_cumsum,
 )
@@ -100,6 +101,7 @@ __all__ = [
     "causal_conv1d_fn",
     "causal_conv1d_update",
     "fused_experts_impl",
+    "gemma_rms_norm",
     "grouped_topk",
     "inplace_fused_experts",
     "outplace_fused_experts",
