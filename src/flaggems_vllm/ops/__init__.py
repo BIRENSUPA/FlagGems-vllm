@@ -271,16 +271,21 @@ __all__ = [
 from flaggems_vllm import runtime as _runtime
 
 if _runtime.device.vendor_name == "hygon":
+    from flaggems_vllm.runtime.backend._hygon.fused import attention as hygon_attention
     from flaggems_vllm.runtime.backend._hygon.ops import (
         int8_einsum,
         w8a8_block_int8_bmm,
     )
 
-    __all__ += ["int8_einsum", "w8a8_block_int8_bmm"]
+    flash_attn_varlen_func_w8a8_int8 = hygon_attention.flash_attn_varlen_func_w8a8_int8
+    __all__ += [
+        "flash_attn_varlen_func_w8a8_int8",
+        "int8_einsum",
+        "w8a8_block_int8_bmm",
+    ]
 
 if _runtime.device.vendor_name == "thead":
-    from flaggems_vllm.runtime.backend._thead.fused.attention import (  # noqa: F401
-        flash_attn_varlen_func_w8a8_int8,
-    )
+    from flaggems_vllm.runtime.backend._thead.fused import attention as thead_attention
 
+    flash_attn_varlen_func_w8a8_int8 = thead_attention.flash_attn_varlen_func_w8a8_int8
     __all__.append("flash_attn_varlen_func_w8a8_int8")
