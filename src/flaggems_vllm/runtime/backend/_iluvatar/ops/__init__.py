@@ -16,6 +16,9 @@
 from flaggems_vllm.runtime.backend._iluvatar.ops.compress_norm_mrope import (
     qwen4_compress_norm_mrope_store_groups,
 )
+from flaggems_vllm.runtime.backend._iluvatar.ops.deepseek_v4_attention_fused_q_kv_rmsnorm import (
+    fused_q_kv_rmsnorm,
+)
 from flaggems_vllm.runtime.backend._iluvatar.ops.gemma_rms_norm import gemma_rms_norm
 from flaggems_vllm.runtime.backend._iluvatar.ops.hyperconnection import (
     qwen4_hc_inject_combine,
@@ -31,6 +34,7 @@ from flaggems_vllm.runtime.backend._iluvatar.ops.topk_softplus_sqrt import (
 )
 
 __all__ = [
+    "fused_q_kv_rmsnorm",
     "qwen4_store_qsa_kv_rows",
     "qwen4_hc_inject_combine",
     "ple_state_scatter_",
